@@ -1,0 +1,23 @@
+My Project for So_Long
+
+Main Theme: World Cup
+
+My floor is a pixelated grass field
+
+My Walls are all withe or if possible an animated crowd
+
+The movable character is Ronaldo (or any football star) (carrying a 
+football potentially)
+
+The consuables that one can catch are the contry flags &
+The last key to finish the game is the world cup
+
+The main enemy is the refeere or messi or smth else
+
+First Map is in  a football field type of shape
+
+Second is in a stadium kind of shape 
+
+...
+
+When the world cup is caught maybe put a sound ? if possible

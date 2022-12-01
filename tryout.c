@@ -10,7 +10,10 @@ int main(void)
 		return (MLX_ERROR);
 	win_ptr = mlx_new_window(mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT, "So_Long: My First Game!");
 	if (win_ptr == NULL)
-	
+	{
+		free(win_ptr);
+		return (MLX_ERROR);
+	}
 	while (1)
 		;
 	mlx_destroy_window(mlx_ptr, win_ptr);
