@@ -7,22 +7,28 @@ int	handle_no_event(void *data)
 	return(0);
 }
 
-int handle_keypress(int keysym, t_vars *vars)
+/* When you press a key in the program this func is called */
+
+int handle_keypress(int keysym, t_all *all)
 {
-	if (keysym == 65307)
-		mlx_destroy_window(vars->mlx, vars->window);
+	if (keysym == ESC)
+	{
+		mlx_destroy_window(all->vars.mlx, all->vars.window);
+		mlx_destroy_display(all->vars.mlx);
+		free(all->vars.mlx);
+		exit(MLX_ERROR);
+	}
 
 	printf("Keypress: %d\n", keysym);
 	return (0);
 }
 
-// When you press a key in the program this func is called
-
-int deal_key(int key, t_vars *vars)
-{
-	printf("Keyrelease %d", key);
+int handle_mousepress(int mousesym, t_vars *vars)
+{	
+	printf("Mouse press: %d\n", mousesym);
 	return (0);
 }
+
 
 int main(void)
 {
@@ -39,6 +45,7 @@ int main(void)
 	}
 
 	mlx_key_hook(all.vars.window, handle_keypress, &all.vars);
+	mlx_mouse_hook(all.vars.window, handle_mousepress, &all.vars);
 	
 	mlx_loop(all.vars.mlx);
 

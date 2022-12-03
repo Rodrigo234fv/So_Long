@@ -4,14 +4,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <fcntl.h>
 #include <mlx.h>
 #include "./get_next_line/get_next_line.h"
 #include "./ft_printf/ft_printf.h"
 
+/* Defines to make the code easier to read */
+
+/* Screen Size */
+
 # define WINDOW_WIDTH 600
 # define WINDOW_HEIGHT 600
 
+/* Key Presses */
+
+# define W 119
+# define S 115
+# define A 97
+# define D 100
+
+/* Close Window */
+
+# define ESC 65307
+
+/* Error case */
+
 # define MLX_ERROR 1
+
+/* My Structures */
 
 /* My main vars */
 
@@ -47,7 +67,7 @@ typedef struct s_colors{
 }			t_colors;
 
 
-/* Big Boy Struct > Coints Everything */
+/* Big Boy Struct > Includes all other structs */
 
 typedef struct s_all
 {
