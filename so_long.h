@@ -6,8 +6,8 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <mlx.h>
-#include "./get_next_line/get_next_line.h"
-#include "./ft_printf/ft_printf.h"
+#include "get_next_line/get_next_line.h"
+#include "ft_printf/ft_printf.h"
 
 /* Defines to make the code easier to read */
 

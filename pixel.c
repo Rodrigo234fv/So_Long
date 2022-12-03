@@ -6,7 +6,7 @@
 /*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 11:52:50 by rodrigo           #+#    #+#             */
-/*   Updated: 2022/12/03 14:28:24 by rodrigo          ###   ########.fr       */
+/*   Updated: 2022/12/03 18:02:56 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,29 @@
  */
 
 // Tenho que corrigir
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+void	my_mlx_pixel_put(t_all *all, int x, int y, int color)
 {
 	char	*dest;
 
-	dest = data->addr + (y * data->line_lenght + x * (data->bits_per_pixel / 8));
+	dest = all->window.addr + (y * all->window.line_lenght + x * (all->window.bits_per_pixel / 8));
 	*(unsigned int*)dest = color;
 }
 
-int	ft_close (int keycode, t_vars *vars)
+int	ft_close (int keycode, t_all *all)
 {
-	mlx_destroy_window(vars->mlx, vars->win);
+	mlx_destroy_window(all->vars.mlx, all->vars.window);
 	return (0);
 }
 
 
 int main (void)
 {
-	t_vars	vars;
+	t_all	all;
 
-	vars.mlx = mlx_init();
-	vars.win = mlx_new_window(vars.mlx, WINDOW_WIDTH, WINDOW_HEIGHT, "Bonjour!");
-	mlx_hook(vars.win, 2, 1L<<0, ft_close, &vars);
-	mlx_loop(vars.mlx);
+	all.vars.mlx = mlx_init();
+	all.vars.window = mlx_new_window(all.vars.mlx, WINDOW_WIDTH, WINDOW_HEIGHT, "Bonjour!");
+	mlx_hook(all.vars.window, 2, 1L<<0, ft_close, &all.vars);
+	mlx_loop(all.vars.mlx);
 }
 
 

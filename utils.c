@@ -18,8 +18,10 @@ int handle_keypress(int keysym, t_all *all)
 		free(all->vars.mlx);
 		exit(MLX_ERROR);
 	}
-
-	printf("Keypress: %d\n", keysym);
+	else 
+	{
+		printf("Keypress: %d\n", keysym);
+	}
 	return (0);
 }
 
@@ -30,7 +32,7 @@ int handle_mousepress(int mousesym, t_vars *vars)
 }
 
 
-int main(void)
+/* int main(void)
 {
 	t_all	all;
 
@@ -51,4 +53,4 @@ int main(void)
 
 	mlx_destroy_display(all.vars.mlx);
 	free(all.vars.mlx);
-}
+} */
