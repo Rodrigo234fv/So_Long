@@ -39,6 +39,7 @@ int main(void)
 	}
 
 	mlx_key_hook(all.vars.window, handle_keypress, &all.vars);
+	
 	mlx_loop(all.vars.mlx);
 
 	mlx_destroy_display(all.vars.mlx);
