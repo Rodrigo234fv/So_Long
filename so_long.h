@@ -31,6 +31,10 @@
 
 # define MLX_ERROR 1
 
+/* Size of each Sprite */
+
+# define PIX 48
+
 /* My Structures */
 
 /* My main vars */
