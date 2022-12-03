@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <mlx.h>
+#include "./get_next_line/get_next_line.h"
 
 # define WINDOW_WIDTH 600
 # define WINDOW_HEIGHT 600

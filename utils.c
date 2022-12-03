@@ -27,13 +27,13 @@ int deal_key(int key, t_vars *vars)
 	return (0);
 }
 
-int main (void)
+int main(void)
 {
-	t_vars	vars;
+	t_all	all;
 
-	vars.mlx = mlx_init();
-	vars.win = mlx_new_window(vars.mlx, 500, 500, "Basic Window");
-
-	mlx_key_hook(vars.win, deal_key, &vars);
-	mlx_loop(vars.mlx);
+	all.vars.mlx = mlx_init();
+	if (all.vars.mlx == NULL)
+		return (MLX_ERROR);
+	all.vars.window = mlx_new_window(all.vars.mlx, WINDOW_WIDTH, WINDOW_HEIGHT, "W");
+	
 }
