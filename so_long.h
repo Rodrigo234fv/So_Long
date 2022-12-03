@@ -33,14 +33,14 @@
 
 /* Size of each Sprite */
 
-# define PIX 48
+# define PIXEL 48
 
 /* My Structures */
 
 /* My main vars */
 
-typedef struct s_vars{
-
+typedef struct s_vars
+{
 	void	*mlx;
 	void	*window;
 
@@ -49,8 +49,8 @@ typedef struct s_vars{
 
 /* Struct to create an image the will cover the whole window */
 
-typedef struct s_window{
-
+typedef struct s_window
+{
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
@@ -61,8 +61,8 @@ typedef struct s_window{
 
 /* Colors -> They use RGBA color system */
 
-typedef struct s_colors{
-
+typedef struct s_colors
+{
 	int		r;
 	int		g;
 	int		b;
@@ -70,6 +70,52 @@ typedef struct s_colors{
 
 }			t_colors;
 
+/* Creating the map */
+
+typedef struct s_map
+{
+
+	char	**map;
+	int		x;
+	int		y;
+	int		player;
+	int		schweiz;
+	int		spain;
+	int		france;
+	int		brazil;
+	int		trap;
+	int		exit;
+
+}			t_map;
+
+
+/* My Player */
+
+typedef struct s_player
+{
+	int		x;
+	int		y;
+
+}			t_player;
+
+/* All my Images */
+
+/* The Country flags are the collectibles in my game*/
+
+typedef struct s_image
+{
+
+	void	*player;
+	void	*schweiz;
+	void	*spain;
+	void	*france;
+	void	*brazil;
+	void	*floor;
+	void	*wall;
+	void	*trap;
+	void	*exit;
+
+}			t_image;
 
 /* Big Boy Struct > Includes all other structs */
 
@@ -78,8 +124,19 @@ typedef struct s_all
 	t_vars		vars;
 	t_window	window;
 	t_colors	colors;
+	t_map		map;
+	t_player	player;
+	t_image		image;
 
 }				t_all;
+
+/* Functions that handle the map rendering || drawing */
+
+void	create_images(t_all *all);
+
+/* Functions that handle specific events */
+
+int handle_keypress(int keysym, t_all *all);
 
 
 #endif
