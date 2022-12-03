@@ -1,6 +1,7 @@
 {
 	"C_Cpp.errorSquiggles": "Disabled",
 	"files.associations": {
-		"YT.C": "cpp"
+		"YT.C": "cpp",
+		"ft_printf.h": "c"
 	}
 }

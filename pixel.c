@@ -6,7 +6,7 @@
 /*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 11:52:50 by rodrigo           #+#    #+#             */
-/*   Updated: 2022/12/03 12:14:23 by rodrigo          ###   ########.fr       */
+/*   Updated: 2022/12/03 14:28:24 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 /* This Func puts color in the black window 
 (First step to be able to draw the map)
  */
+
+// Tenho que corrigir
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*dest;
