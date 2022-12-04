@@ -76,8 +76,8 @@ typedef struct s_map
 {
 
 	char	**map;
-	int		x;
-	int		y;
+	int		width;
+	int		height;
 	int		player;
 	int		schweiz;
 	int		spain;
@@ -114,6 +114,7 @@ typedef struct s_image
 	void	*wall;
 	void	*trap;
 	void	*exit;
+	void	*white_space;
 
 }			t_image;
 
@@ -133,6 +134,12 @@ typedef struct s_all
 /* Functions that handle the map rendering || drawing */
 
 void	create_images(t_all *all);
+
+void	draw_map(t_all *all, int x, int y);
+
+void	draw_all_collectibles(t_all *all, int x, int y);
+
+void	exit_done(t_all *all);
 
 /* Functions that handle specific events */
 
