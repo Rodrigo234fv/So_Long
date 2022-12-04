@@ -8,6 +8,7 @@
 #include <mlx.h>
 #include "get_next_line/get_next_line.h"
 #include "ft_printf/ft_printf.h"
+#include "libft/libft.h"
 
 /* Defines to make the code easier to read */
 
@@ -34,6 +35,21 @@
 /* Size of each Sprite */
 
 # define PIXEL 48
+
+/* My Sprites aka Images*/
+
+# define PLAYER "./images/ronaldo.xpm"
+# define GRASS "./images/floor.xpm"
+# define WALL "./images/wall.xpm"
+# define SWISS "./images/schweiz.xpm"
+# define SPAIN "./images/spain.xpm"
+# define FRANCE "./images/france.xpm"
+# define BRAZIL "./images/brazil.xpm"
+# define TRAP "./images/red_card.xpm"
+# define EXIT0 "./images/plane.xpm"
+# define EXIT1 "./images/cup.xpm"
+
+
 
 /* My Structures */
 
@@ -76,8 +92,8 @@ typedef struct s_map
 {
 
 	char	**map;
-	int		width;
-	int		height;
+	int		columns;
+	int		rows;
 	int		player;
 	int		schweiz;
 	int		spain;

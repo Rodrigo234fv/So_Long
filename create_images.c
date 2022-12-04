@@ -6,7 +6,7 @@
 /*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 21:28:45 by rodrigo           #+#    #+#             */
-/*   Updated: 2022/12/03 23:17:00 by rodrigo          ###   ########.fr       */
+/*   Updated: 2022/12/04 15:14:53 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,36 @@ void	create_images(t_all *all)
 
 	pixel = PIXEL;
 	all->image.player = mlx_xpm_file_to_image(all->vars.mlx, \
-			"./images/ronaldo.xpm", &pixel, &pixel);
+			PLAYER, &pixel, &pixel);
 	all->image.floor = mlx_xpm_file_to_image(all->vars.mlx, \
-			"./images/floor.xpm", &pixel, &pixel);
+			GRASS, &pixel, &pixel);
 	all->image.wall = mlx_xpm_file_to_image(all->vars.mlx, \
-			"./images/wall.xpm", &pixel, &pixel);
+			WALL, &pixel, &pixel);
 	all->image.schweiz = mlx_xpm_file_to_image(all->vars.mlx, \
-			"./images/schweiz.xpm", &pixel, &pixel);
+			SWISS, &pixel, &pixel);
 	all->image.spain = mlx_xpm_file_to_image(all->vars.mlx, \
-			"./images/spain.xpm", &pixel, &pixel);
+			SPAIN, &pixel, &pixel);
 	all->image.france = mlx_xpm_file_to_image(all->vars.mlx, \
-			"./images/france.xpm", &pixel, &pixel);
+			FRANCE, &pixel, &pixel);
 	all->image.brazil = mlx_xpm_file_to_image(all->vars.mlx, \
-			"./images/brazil.xpm", &pixel, &pixel);
+			BRAZIL, &pixel, &pixel);
 	all->image.trap = mlx_xpm_file_to_image(all->vars.mlx, \
-			"./images/red_card.xpm", &pixel, &pixel);
+			TRAP, &pixel, &pixel);
 	all->image.exit = mlx_xpm_file_to_image(all->vars.mlx, \
-			"./images/plane.xpm", &pixel, &pixel);
+			EXIT0, &pixel, &pixel);
+}
+
+/* This function will be used after the player collects all of 
+the collectibles ==> the exit will switch from a plane to a throphy */
+
+void	exit_done(t_all *all)
+{
+	int	pixel;
+
+	pixel = PIXEL;
+	mlx_destroy_image(all->vars.mlx, all->image.exit);
+	all->image.exit = mlx_xpm_file_to_image(all->vars.mlx, \
+				EXIT1, &pixel, &pixel);
 }
 
 /* Tester main */
