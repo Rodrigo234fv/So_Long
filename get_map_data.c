@@ -6,7 +6,7 @@
 /*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 14:15:49 by rodrigo           #+#    #+#             */
-/*   Updated: 2022/12/04 14:56:01 by rodrigo          ###   ########.fr       */
+/*   Updated: 2022/12/05 15:41:51 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ to help me build the map.*/
 As a bonus i want to not only have 1´s and 0´s I want to draw cooler maps ==>
 Hence I need to find a way, with some conditions, to make that work */
 
-void	map_rows_counter (t_all *all, char *file)
+/* void	map_rows_counter (t_all *all, char *file)
 {
 	int		fd;
 	int		rows;
@@ -27,6 +27,8 @@ void	map_rows_counter (t_all *all, char *file)
 
 	rows = 0;
 	fd = open(file, O_RDONLY);
+	if (fd < 0)
+		printf("%sError: open failed", KRED);
 	while (1)
 	{
 		line = get_next_line(fd);
@@ -42,7 +44,7 @@ void	map_rows_counter (t_all *all, char *file)
 	close(fd);
 }
 
-void	map_columns_counter (t_all *all, char str)
+void	map_columns_counter (t_all *all, char *str)
 {
 	int	i;
 
@@ -58,17 +60,36 @@ void	map_creation(t_all *all, char *str)
 {
 	int	y;
 	int	x;
+	int	start;
 
+	start = 0;
 	y = 0;
 	x = 0;
 	all->map.map = malloc(sizeof(char *) * (all->map.rows + 1));
 	all->map.map[all->map.rows] = NULL;
 	if (!all->map.map)
-		return (NULL);
+		return ;
 	while (y < all->map.rows)
 	{
 		all->map.map[y] = ft_substr(str, start, all->map.columns);
 		y++;
 		start = start + all->map.columns + 1;
 	}
-}
+} */
+
+
+/* int	main(void)
+{
+	int		fd;
+	char	*line;
+
+	fd = open("maps/map2.ber", O_RDONLY);
+
+	// printf("%s", get_next_line(fd));
+	while ((line = get_next_line(fd)))
+	{
+		printf("%s", line);
+		free(line);
+	}
+	return (0);
+} */

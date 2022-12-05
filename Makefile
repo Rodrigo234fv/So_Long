@@ -6,13 +6,13 @@
 #    By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:33:17 by rode-alb          #+#    #+#              #
-#    Updated: 2022/12/01 14:53:41 by rodrigo          ###   ########.fr        #
+#    Updated: 2022/12/05 15:33:50 by rodrigo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # -*- Makefile -*-
 
-FILES = tryout.c
+FILES = main.c 
 
 OBJS = $(FILES:.c=.o)
 

@@ -6,8 +6,8 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <mlx.h>
-#include "get_next_line/get_next_line.h"
-#include "ft_printf/ft_printf.h"
+#include "./get_next_line/get_next_line.h"
+#include "./ft_printf/ft_printf.h"
 #include "libft/libft.h"
 
 /* Defines to make the code easier to read */
@@ -48,8 +48,18 @@
 # define TRAP "./images/red_card.xpm"
 # define EXIT0 "./images/plane.xpm"
 # define EXIT1 "./images/cup.xpm"
+# define WHITESP "./images/blue_sky.xpm"
 
+/* Color codes for my printf */
 
+#define KNRM  "\x1B[0m"
+#define KRED  "\x1B[31m"
+#define KGRN  "\x1B[32m"
+#define KYEL  "\x1B[33m"
+#define KBLU  "\x1B[34m"
+#define KMAG  "\x1B[35m"
+#define KCYN  "\x1B[36m"
+#define KWHT  "\x1B[37m"
 
 /* My Structures */
 

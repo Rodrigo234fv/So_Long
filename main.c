@@ -6,7 +6,7 @@
 /*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 19:59:52 by rodrigo           #+#    #+#             */
-/*   Updated: 2022/12/04 15:13:23 by rodrigo          ###   ########.fr       */
+/*   Updated: 2022/12/05 15:17:33 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int main (int argc, char **argv)
 {
 	t_all	all;
 
-	if (argc != 2)
+	/* if (argc != 2)
 	{
 		write(1, "Error\nThe num of arguments given is invalid.\n", 45);
 		return (0);
-	}
+	} */
 
 	// check if game exists (map)
 	all.vars.mlx = mlx_init();
