@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_map_data.c                                     :+:      :+:    :+:   */
+/*   make_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 14:15:49 by rodrigo           #+#    #+#             */
-/*   Updated: 2022/12/05 15:43:01 by rodrigo          ###   ########.fr       */
+/*   Updated: 2022/12/12 16:51:30 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,21 @@
 
 /* So in here I want to read my ber file and retrieve all relevant info
 to help me build the map.*/
+
+
+/* Due to memory leaks i need to be able to free my map */
+
+void	f_free(char **tmp)
+{
+	int	i;
+	
+	i = 0;
+	while (tmp[i])
+		free(tmp[i++]);
+	free(tmp);
+	tmp = NULL;
+	return ;
+}
 
 /* First i need the num of rows and num of columns 
 As a bonus i want to not only have 1´s and 0´s I want to draw cooler maps ==>
@@ -44,7 +59,7 @@ void	map_rows_counter (t_all *all, char *file)
 	close(fd);
 }
 
-void	map_columns_counter (t_all *all, char *str)
+/* void	map_columns_counter (t_all *all, char *str)
 {
 	int	i;
 
@@ -54,25 +69,54 @@ void	map_columns_counter (t_all *all, char *str)
 		i++;
 		all->map.columns++;
 	}
+} */
+
+
+void input_map (int row, int column, int i; t_all *all)
+{
+	char	*line;
+	
+	line = get_next_line(all->map.fd);
+	while (line != NULL)
+	{
+		column = 0;
+		i = 0;
+		all->map.map[row] = ft_calloc(ft_strlen2(line) + 1, sizeof(char));
+		if (!all->map.map[row])
+			return (f_free(all->map.map));
+		while (line[i])
+		{
+			all->map.map[row][column++] = line[i++]; 
+		}
+		all->map.map[row++][column] = 0;
+		free(line);
+		line = get_next_line(all->map.fd);
+	}
+	all->map.map[row] = NULL;
 }
 
-void	map_creation(t_all *all, char *str)
+void	map_creation(char *str, t_all *all)
 {
-	int	y;
-	int	x;
-	int	start;
+	int	row;
+	int	column;
+	int	i;
 
-	start = 0;
-	y = 0;
-	x = 0;
-	all->map.map = malloc(sizeof(char *) * (all->map.rows + 1));
-	all->map.map[all->map.rows] = NULL;
-	if (!all->map.map)
+	i = 0;
+	row = 0;
+	column = 0;
+	
+	map_rows_counter(path);
+	all->map.line = str;
+	all->map.map = ft_calloc(all->map.rows + 1, sizeof(char *));
+	if (!(all->map.map))
 		return ;
-	while (y < all->map.rows)
+	all->map.fd = open (str, O_RDONLY);
+	if (all->map.fd < 0)
+		printf("ERROR: OPEN FAILED");
+	else
 	{
-		all->map.map[y] = ft_substr(str, start, all->map.columns);
-		y++;
-		start = start + all->map.columns + 1;
+		input_map(row, column, i , all);
+		close (all->map.fd);
 	}
+	
 }

@@ -1,12 +1,5 @@
 #include "so_long.h"
 
-
-int	handle_no_event(void *data)
-{
-	/* This func needs to exist, but is usless for now*/
-	return(0);
-}
-
 /* When you press a key in the program this func is called */
 
 int handle_keypress(int keysym, t_all *all)
@@ -25,7 +18,7 @@ int handle_keypress(int keysym, t_all *all)
 	return (0);
 }
 
-int handle_mousepress(int mousesym, t_vars *vars)
+int handle_mousepress(int mousesym)
 {	
 	printf("Mouse press: %d\n", mousesym);
 	return (0);

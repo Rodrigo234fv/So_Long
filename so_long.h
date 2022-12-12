@@ -102,6 +102,8 @@ typedef struct s_map
 {
 
 	char	**map;
+	char	*line;
+	int		fd;
 	int		columns;
 	int		rows;
 	int		player;
@@ -109,6 +111,7 @@ typedef struct s_map
 	int		spain;
 	int		france;
 	int		brazil;
+	int		collected;
 	int		trap;
 	int		exit;
 
@@ -119,8 +122,10 @@ typedef struct s_map
 
 typedef struct s_player
 {
-	int		x;
-	int		y;
+	int		p_x;
+	int		p_y;
+	int		i;
+	int		j;
 
 }			t_player;
 
@@ -141,6 +146,9 @@ typedef struct s_image
 	void	*trap;
 	void	*exit;
 	void	*white_space;
+	int		width;
+	int		height;
+	int		line_lenght;
 
 }			t_image;
 

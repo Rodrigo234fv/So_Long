@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 17:25:46 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/12/12 17:01:36 by rodrigo          ###   ########.fr       */
+/*   Created: 2022/10/07 17:31:35 by rode-alb          #+#    #+#             */
+/*   Updated: 2022/12/12 15:51:46 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
+size_t	ft_strlen2(const char *s)
+{
+	size_t		i;
 
-
-char		*ft_substr(char const *s, unsigned int start, size_t len);
-
-size_t		ft_strlen2(const char *s);
-
-char		*ft_strdup(const char *src);
-
-void		*ft_calloc(size_t nitems, size_t size);
-
-void		ft_bzero(void *s, size_t n);
-
-#endif
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}

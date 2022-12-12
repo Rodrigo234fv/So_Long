@@ -6,13 +6,24 @@
 #    By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:33:17 by rode-alb          #+#    #+#              #
-#    Updated: 2022/12/05 15:33:50 by rodrigo          ###   ########.fr        #
+#    Updated: 2022/12/12 16:25:22 by rodrigo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # -*- Makefile -*-
 
-FILES = main.c 
+FILES =		./get_next_line/get_next_line_utils.c \
+			./get_next_line/get_next_line.c \
+			./libft/ft_substr.c \
+			./libft/ft_strlen.c \
+			./libft/ft_strdup.c \
+			create_images.c \
+			make_map.c \
+			read_map.c \
+			utils.c \
+			main.c
+	
+
 
 OBJS = $(FILES:.c=.o)
 

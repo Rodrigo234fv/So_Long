@@ -6,7 +6,7 @@
 /*   By: rodrigo <rodrigo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 21:27:40 by rodrigo           #+#    #+#             */
-/*   Updated: 2022/12/05 15:10:22 by rodrigo          ###   ########.fr       */
+/*   Updated: 2022/12/12 15:59:07 by rodrigo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ void	draw_all_collectibles(t_all *all, int x, int y)
 
 int	processing_map(t_all *all)
 {
-	int		x;
-	int		y;
+	int		i;
+	int		j;
 	int		width;
 
 	if (all->vars.window == NULL)
@@ -66,7 +66,7 @@ int	processing_map(t_all *all)
 		width = 0;
 		while (all->map.map[i][j] && all->map.map[i][j] != '\n')
 		{
-			draw_map(all, width, i, j);
+			draw_map(all, j, i);
 			width += PIXEL;
 			j++;
 		}
